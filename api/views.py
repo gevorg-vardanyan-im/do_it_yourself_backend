@@ -21,5 +21,6 @@ def api_overview(request):
 @api_view(['GET'])
 def gallery_sections(request):
     sections = Gallery.objects.all()
-    serializer = GallerySerializers(sections, many=True)
+    serializer = GallerySerializers(sections, many=True,
+                                    context={"request": request})
     return Response(serializer.data)
