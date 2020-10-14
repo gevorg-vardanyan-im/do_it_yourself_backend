@@ -7,4 +7,7 @@ urlpatterns = [
     path('gallery-section-folders/<int:section_id>',
          views.gallery_section_folders,
          name='gallery-section-folders'),
+    path('gallery-section-folders/<int:folder_id>/images',
+         views.gallery_section_folder_images,
+         name='gallery-section-folders'),
 ]
